@@ -63,7 +63,7 @@ public class Group {
 
 	public void dellStudent(long id) {
 		for (Student student2 : group) {
-			
+
 			if (student2 != null && student2.getId() == id) {
 				group.remove(student2);
 				break;
@@ -72,17 +72,18 @@ public class Group {
 	}
 
 	public Student searchStudent(String lastName) {
-		Student temp = new Student();
-		try {
-		for (Student student: group) {
-			if (student.getLastName().equals(lastName)) {
+		Student temp = null;
+
+		for (Student student : group) {
+			if ((student.getLastName()).equals(lastName)) {
 				temp = student;
 				break;
-			} else {
-				throw new searchStudentExeption();
 			}
 		}
-		
+		try {
+			if (temp == null) {
+				throw new searchStudentExeption();
+			}
 		} catch (searchStudentExeption e) {
 			System.out.println("Студента з прізвищем " + lastName + " не знайдено!");
 		}
@@ -114,7 +115,5 @@ public class Group {
 		Group other = (Group) obj;
 		return Objects.equals(group, other.group) && Objects.equals(name, other.name);
 	}
-	
-	
 
 }

@@ -37,7 +37,7 @@ public class Main {
 		//System.out.println(p.me3[0]);
 		//p.addStudent(add.newSt());
 		
-		System.out.println(p.searchStudent("Скайвокер"));
+		System.out.println(p.searchStudent("Партко"));
 		p.addStudent(new Student("Джон", "Котигорошко", HumanSex.MALE, 31,"МЕ-3", "Економіки і менеджменту", 1358));
 		
 		System.out.println(p.toString());
